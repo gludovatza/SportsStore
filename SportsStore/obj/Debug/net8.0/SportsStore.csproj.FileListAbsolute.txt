@@ -141,3 +141,4 @@ C:\Users\gla\source\repos\SportsStore\SportsStore\bin\Debug\net8.0\runtimes\win\
 C:\Users\gla\source\repos\SportsStore\SportsStore\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\gla\source\repos\SportsStore\SportsStore\obj\Debug\net8.0\SportsStore.csproj.AssemblyReference.cache
 C:\Users\gla\source\repos\SportsStore\SportsStore\obj\Debug\net8.0\SportsSt.D81B86A7.Up2Date
+C:\Users\gla\source\repos\SportsStore\SportsStore\bin\Debug\net8.0\libman.json
