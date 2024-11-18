@@ -36,9 +36,25 @@ app.UseAuthorization();
 //    name: "default",
 //    pattern: "{controller=Home}/{action=Index}/{id?}");
 
+//app.MapControllerRoute("pagination",
+//    "Products/Page{productPage}",
+//    new { Controller = "Product", action = "Index" });
+
+app.MapControllerRoute("catpage",
+    "Products/{category}/Page{productPage:int}",
+    new { Controller = "Product", action = "Index" });
+
+app.MapControllerRoute("page",
+    "Products/Page{productPage:int}",
+    new { Controller = "Product", action = "Index", productPage = 1 });
+
+app.MapControllerRoute("category",
+    "Products/{category}",
+    new { Controller = "Product", action = "Index", productPage = 1 });
+
 app.MapControllerRoute("pagination",
     "Products/Page{productPage}",
-    new { Controller = "Product", action = "Index" });
+    new { Controller = "Product", action = "Index", productPage = 1 });
 
 app.MapDefaultControllerRoute();
 
