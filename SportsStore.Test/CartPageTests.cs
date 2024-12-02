@@ -32,7 +32,7 @@ namespace SportsStore.Test
             
             // Action
             CartModel cartModel = new CartModel(mockRepo.Object, testCart);
-                cartModel.OnGet("myUrl");
+            cartModel.OnGet("myUrl");
             
             //Assert
             Assert.Equal(2, cartModel.Cart.Lines.Count());
@@ -52,7 +52,7 @@ namespace SportsStore.Test
             
             // Action
             CartModel cartModel = new CartModel(mockRepo.Object, testCart);
-                cartModel.OnPost(1, "myUrl");
+            cartModel.OnPost(1, "myUrl");
             
             //Assert
             Assert.Single(testCart.Lines);
