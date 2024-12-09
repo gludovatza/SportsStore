@@ -1,18 +1,10 @@
 ﻿@model ProductsListViewModel
-
 <div class="bg-dark text-white p-2">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col navbar-brand">SPORTS STORE</div>
-            <div class="col-6 navbar-text text-end">
-                <vc:cart-summary />
-            </div>
-        </div>
-    </div>
+    <span class="navbar-brand ml-2">SPORTS STORE</span>
 </div>
 <div class="row m-1 p-1">
     <div id="categories" class="col-3">
-        <vc:navigation-menu />
+        Put something useful here later
     </div>
     <div class="col-9">
         @foreach (var p in Model?.Products ?? Enumerable.Empty<Product>())
@@ -20,16 +12,9 @@
             <partial name="ProductSummary" model="p" />
         }
 
-        <div 
-            page-model="@Model?.PagingInfo" 
-            page-action="Index" 
-            page-classes-enabled="true"
-            page-class="btn" 
-            page-class-normal="btn-outline-dark"
-            page-class-selected="btn-primary" 
-            page-url-category="@Model?.CurrentCategory!"
-            page-class-selected="btn-primary" 
-            class="btn-group pull-right m-1">
+        <div page-model="@Model?.PagingInfo" page-action="Index" page-classes-enabled="true"
+             page-class="btn" page-class-normal="btn-outline-dark"
+             page-class-selected="btn-primary" class="btn-group pull-right m-1">
         </div>
     </div>
 </div>
