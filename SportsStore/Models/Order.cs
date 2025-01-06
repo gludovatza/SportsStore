@@ -6,7 +6,7 @@ namespace SportsStore.Models
     public class Order
     {
         [BindNever]
-        public int orderId { get; set; }
+        public int OrderID { get; set; }
         public ICollection<CartLine> Lines = new List<CartLine>();
         [Required(ErrorMessage = "Please enter name")]
         public string? Name  { get; set;}

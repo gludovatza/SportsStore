@@ -14,7 +14,7 @@ namespace SportsStore.Models
             .ThenInclude(l => l.Product);
         public void SaveOrder(Order order) { 
         context.AttachRange(order.Lines.Select(l => l.Product));
-            if (order.orderId == 0) { 
+            if (order.OrderID == 0) { 
             context.Orders.Add(order);
             }
             context.SaveChanges();

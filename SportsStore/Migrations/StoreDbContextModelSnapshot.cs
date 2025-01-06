@@ -24,11 +24,11 @@ namespace SportsStore.Migrations
 
             modelBuilder.Entity("SportsStore.Models.Order", b =>
                 {
-                    b.Property<int>("orderId")
+                    b.Property<int>("OrderID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("orderId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderID"));
 
                     b.Property<string>("City")
                         .IsRequired()
@@ -62,7 +62,7 @@ namespace SportsStore.Migrations
                     b.Property<string>("Zip")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("orderId");
+                    b.HasKey("OrderID");
 
                     b.ToTable("Orders");
                 });
