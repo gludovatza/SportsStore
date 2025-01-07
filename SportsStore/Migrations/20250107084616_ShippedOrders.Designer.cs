@@ -12,8 +12,8 @@ using SportsStore.Models;
 namespace SportsStore.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20241209134159_Orders")]
-    partial class Orders
+    [Migration("20250107084616_ShippedOrders")]
+    partial class ShippedOrders
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -83,6 +83,9 @@ namespace SportsStore.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Shipped")
+                        .HasColumnType("bit");
 
                     b.Property<string>("State")
                         .IsRequired()
