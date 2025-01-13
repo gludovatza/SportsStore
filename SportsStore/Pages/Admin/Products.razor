@@ -46,7 +46,7 @@
 @code {
     public IStoreRepository Repository => Service;
     public IEnumerable<Product> ProductData { get; set; }
-    = Enumerable.Empty<Product>();
+        = Enumerable.Empty<Product>();
     protected async override Task OnInitializedAsync()
     {
         await UpdateData();
