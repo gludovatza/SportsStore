@@ -9,9 +9,9 @@
     public IOrderRepository Repository => Service;
     public IEnumerable<Order> AllOrders { get; set; } = Enumerable.Empty<Order>();
     public IEnumerable<Order> UnshippedOrders { get; set; }
-    = Enumerable.Empty<Order>();
+        = Enumerable.Empty<Order>();
     public IEnumerable<Order> ShippedOrders { get; set; }
-    = Enumerable.Empty<Order>();
+        = Enumerable.Empty<Order>();
     protected async override Task OnInitializedAsync()
     {
         await UpdateData();
