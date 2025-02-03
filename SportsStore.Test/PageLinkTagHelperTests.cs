@@ -1,15 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Mvc.Routing;
-using Microsoft.AspNetCore.Razor.TagHelpers;
-using Moq;
-using SportsStore.Infrastructure;
-using SportsStore.Models.ViewModels;
-using Xunit;
-
-namespace SportsStore.Test
+﻿namespace SportsStore.Test
 {
     public class PageLinkTagHelperTests
     {
@@ -47,10 +36,10 @@ namespace SportsStore.Test
         //    TagHelperOutput output = new TagHelperOutput("div",
         //        new TagHelperAttributeList(),
         //        (cache, encoder) => Task.FromResult(content.Object));
-            
+
         //    // Act
         //    helper.Process(ctx, output);
-            
+
         //    // Assert
         //    Assert.Equal(@"<a href=""Test/Page1"">1</a>"
         //    + @"<a href=""Test/Page2"">2</a>"

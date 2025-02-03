@@ -2,11 +2,6 @@
 using Moq;
 using SportsStore.Components;
 using SportsStore.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SportsStore.Test
 {
@@ -29,12 +24,12 @@ namespace SportsStore.Test
                  }).AsQueryable<Product>());
             NavigationMenuViewComponent target =
                 new NavigationMenuViewComponent(mock.Object);
-            
+
             // Act = get the set of categories
             string[] results = ((IEnumerable<string>?)(target.Invoke()
                 as ViewViewComponentResult)?.ViewData?.Model
                 ?? Enumerable.Empty<string>()).ToArray();
-            
+
             // Assert
             Assert.True(Enumerable.SequenceEqual(new string[] { "Apples",
                 "Oranges", "Plums" }, results));

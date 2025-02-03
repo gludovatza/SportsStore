@@ -2,7 +2,6 @@
 using Moq;
 using SportsStore.Controllers;
 using SportsStore.Models;
-using Xunit;
 namespace SportsStore.Test
 {
     public class OrderControllerTests

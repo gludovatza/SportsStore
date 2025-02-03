@@ -2,7 +2,7 @@
 
 namespace SportsStore.Models
 {
-    public class EFOrderRepository:IOrderRepository
+    public class EFOrderRepository : IOrderRepository
     {
         private StoreDbContext context;
         public EFOrderRepository(StoreDbContext ctx)
@@ -19,7 +19,7 @@ namespace SportsStore.Models
             {
                 context.Orders.Add(order);
             }
-        context.SaveChanges();
+            context.SaveChanges();
         }
     }
 }

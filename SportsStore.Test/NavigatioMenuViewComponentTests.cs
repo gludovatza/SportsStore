@@ -3,11 +3,6 @@ using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Moq;
 using SportsStore.Components;
 using SportsStore.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SportsStore.Test
 {
@@ -33,7 +28,7 @@ namespace SportsStore.Test
                 }
             };
             target.RouteData.Values["category"] = categoryToSelect;
-            
+
             // Act
             string? result = (string?)(target.Invoke()
                 as ViewViewComponentResult)?.ViewData?["SelectedCategory"];

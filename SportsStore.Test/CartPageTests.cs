@@ -1,14 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Routing;
-using Moq;
+﻿using Moq;
 using SportsStore.Models;
 using SportsStore.Pages;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using Xunit;
 
 namespace SportsStore.Test
 {
@@ -29,11 +21,11 @@ namespace SportsStore.Test
             Cart testCart = new Cart();
             testCart.AddItem(p1, 2);
             testCart.AddItem(p2, 1);
-            
+
             // Action
             CartModel cartModel = new CartModel(mockRepo.Object, testCart);
             cartModel.OnGet("myUrl");
-            
+
             //Assert
             Assert.Equal(2, cartModel.Cart.Lines.Count());
             Assert.Equal("myUrl", cartModel.ReturnUrl);
@@ -49,11 +41,11 @@ namespace SportsStore.Test
                 new Product { ProductID = 1, Name = "P1" }
             }).AsQueryable<Product>());
             Cart testCart = new Cart();
-            
+
             // Action
             CartModel cartModel = new CartModel(mockRepo.Object, testCart);
             cartModel.OnPost(1, "myUrl");
-            
+
             //Assert
             Assert.Single(testCart.Lines);
             Assert.Equal("P1", testCart.Lines.First().Product.Name);

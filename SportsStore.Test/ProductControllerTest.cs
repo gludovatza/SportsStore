@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using SportsStore.Controllers;
 using SportsStore.Models;
 using SportsStore.Models.ViewModels;
-using Xunit;
 
 namespace SportsStore.Test
 {
@@ -73,12 +69,12 @@ namespace SportsStore.Test
             // Arrange
             ProductController controller =
                 new ProductController(mock.Object) { PageSize = 3 };
-            
+
             // Act
             ProductsListViewModel result =
                 controller.Index(null, 2)?.ViewData.Model as
                 ProductsListViewModel ?? new();
-            
+
             // Assert
             PagingInfo pageInfo = result.PagingInfo;
             Assert.Equal(2, pageInfo.CurrentPage);
@@ -131,13 +127,13 @@ namespace SportsStore.Test
             target.PageSize = 3;
             Func<ViewResult, ProductsListViewModel?> GetModel = result
                 => result?.ViewData?.Model as ProductsListViewModel;
-            
+
             // Act
             int? res1 = GetModel(target.Index("Cat1"))?.PagingInfo.TotalItems;
             int? res2 = GetModel(target.Index("Cat2"))?.PagingInfo.TotalItems;
             int? res3 = GetModel(target.Index("Cat3"))?.PagingInfo.TotalItems;
             int? resAll = GetModel(target.Index(null))?.PagingInfo.TotalItems;
-            
+
             // Assert
             Assert.Equal(2, res1);
             Assert.Equal(2, res2);

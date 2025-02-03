@@ -1,5 +1,5 @@
-﻿using System.Text.Json.Serialization;
-using SportsStore.Infrastructure;
+﻿using SportsStore.Infrastructure;
+using System.Text.Json.Serialization;
 
 namespace SportsStore.Models
 {

@@ -28,7 +28,7 @@ namespace SportsStore.Controllers
                 cart.Clear();
                 return RedirectToPage("/Completed", new { orderId = order.OrderID });
             }
-                return View();
+            return View();
         }
     }
 }
